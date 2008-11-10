@@ -4,4 +4,6 @@
     <string name="ring">Ring</string>
     <string name="vibrate">Vibrate</string>
     <string name="silent">Silent</string>
+	<string name="finish">Close</string>
+	<string name="about">About</string>
 </resources>
