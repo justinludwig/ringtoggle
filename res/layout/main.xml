@@ -12,6 +12,12 @@
         android:layout_width="wrap_content"
         android:layout_centerInParent="true">
         <RadioButton
+            android:text="@string/ring_and_vibrate"
+            android:id="@+id/ring_and_vibrate"
+            android:layout_width="fill_parent"
+            android:textSize="24sp"
+            android:paddingLeft="50sp"/>
+        <RadioButton
             android:text="@string/ring"
             android:id="@+id/ring"
             android:layout_width="fill_parent"

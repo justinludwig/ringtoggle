@@ -35,6 +35,7 @@ public class RingToggle extends Activity {
         group.setOnCheckedChangeListener(new OnCheckedChangeListener() {
 			public void onCheckedChanged(RadioGroup group, int checkedId) {
 				switch (checkedId) {
+					case R.id.ring_and_vibrate: ringAndVibrate(); break;
 					case R.id.ring: ring(); break;
 					case R.id.vibrate: vibrate(); break;
 					case R.id.silent: silent(); break;
@@ -109,11 +110,23 @@ public class RingToggle extends Activity {
 
 	protected int current() {
 		AudioManager audio = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+		
 		switch (audio.getRingerMode()) {
 			case AudioManager.RINGER_MODE_SILENT: return R.id.silent;
 			case AudioManager.RINGER_MODE_VIBRATE: return R.id.vibrate;
-			default: return R.id.ring;
 		}
+		
+		if (audio.shouldVibrate(AudioManager.VIBRATE_TYPE_RINGER))
+			return R.id.ring_and_vibrate;
+		
+		return R.id.ring;
+    }
+    
+    protected void ringAndVibrate() {
+		AudioManager audio = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+		audio.setRingerMode(AudioManager.RINGER_MODE_NORMAL);
+		audio.setVibrateSetting(AudioManager.VIBRATE_TYPE_RINGER, AudioManager.VIBRATE_SETTING_ON);
+		audio.setVibrateSetting(AudioManager.VIBRATE_TYPE_NOTIFICATION, AudioManager.VIBRATE_SETTING_ON);
     }
     
     protected void ring() {
@@ -121,7 +134,6 @@ public class RingToggle extends Activity {
 		audio.setRingerMode(AudioManager.RINGER_MODE_NORMAL);
 		audio.setVibrateSetting(AudioManager.VIBRATE_TYPE_RINGER, AudioManager.VIBRATE_SETTING_OFF);
 		audio.setVibrateSetting(AudioManager.VIBRATE_TYPE_NOTIFICATION, AudioManager.VIBRATE_SETTING_OFF);
-    	
     }
     
     protected void vibrate() {
@@ -129,7 +141,6 @@ public class RingToggle extends Activity {
 		audio.setRingerMode(AudioManager.RINGER_MODE_VIBRATE);
 		audio.setVibrateSetting(AudioManager.VIBRATE_TYPE_RINGER, AudioManager.VIBRATE_SETTING_ON);
 		audio.setVibrateSetting(AudioManager.VIBRATE_TYPE_NOTIFICATION, AudioManager.VIBRATE_SETTING_ON);
-    	
     }
     
     protected void silent() {
@@ -137,6 +148,5 @@ public class RingToggle extends Activity {
 		audio.setRingerMode(AudioManager.RINGER_MODE_SILENT);
 		audio.setVibrateSetting(AudioManager.VIBRATE_TYPE_RINGER, AudioManager.VIBRATE_SETTING_OFF);
 		audio.setVibrateSetting(AudioManager.VIBRATE_TYPE_NOTIFICATION, AudioManager.VIBRATE_SETTING_OFF);
-    	
     }
 }
