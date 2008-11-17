@@ -11,9 +11,9 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.Button;
+import android.view.View.OnTouchListener;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RadioGroup.OnCheckedChangeListener;
@@ -23,6 +23,7 @@ public class RingToggle extends Activity {
 	protected static final String ABOUT_PAGE = "http://code.google.com/p/ringtoggle/wiki/About";
 	protected static final String VERSION_FRAGMENT = "#Version_";
 	
+	protected boolean m_ignoreChange;
 	protected BroadcastReceiver m_ringerModeReceiver;
 	
     @Override
@@ -30,26 +31,54 @@ public class RingToggle extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         
+        // close when background touched
+        View view = (View) findViewById(R.id.view);
+        view.setOnTouchListener(new OnTouchListener() {
+			public boolean onTouch(View v, MotionEvent event) {
+				RingToggle.this.finish();
+				return false;
+			}
+        });
+        
         // add ring-mode radio-group onchange listener
         RadioGroup group = (RadioGroup) findViewById(R.id.menu);
         group.setOnCheckedChangeListener(new OnCheckedChangeListener() {
 			public void onCheckedChanged(RadioGroup group, int checkedId) {
+				if (m_ignoreChange)
+					return;
+				
 				switch (checkedId) {
 					case R.id.ring_and_vibrate: ringAndVibrate(); break;
 					case R.id.ring: ring(); break;
 					case R.id.vibrate: vibrate(); break;
 					case R.id.silent: silent(); break;
 				}
+				
+		        RadioButton radio = (RadioButton) findViewById(checkedId);
+		        if (radio != null)
+		        	radio.setTextSize(30);
+				
+				RingToggle.this.close();
 			}
         });
         
-        // add finish button onclick listener
-        Button button = (Button) findViewById(R.id.finish);
-        button.setOnClickListener(new OnClickListener() {
-			public void onClick(View v) {
-				RingToggle.this.finish();
-			}
-        });
+        // add listener to each radio button to close app when clicked
+        //(even when button is already selected)
+        for (int i = 0, l = group.getChildCount(); i < l; i++) {
+	        RadioButton radio = (RadioButton) group.getChildAt(i);
+	        radio.setOnTouchListener(new OnTouchListener() {
+				public boolean onTouch(View v, MotionEvent event) {
+			        RadioButton radio = (RadioButton) v;
+					if (!radio.isChecked())
+						return false;
+					
+		        	radio.setTextSize(30);
+					RingToggle.this.close();
+					
+					return false;
+				}
+	        });
+        }
     }
     
 	@Override
@@ -85,6 +114,10 @@ public class RingToggle extends Activity {
     public boolean onCreateOptionsMenu(Menu menu) {
         super.onCreateOptionsMenu(menu);
         
+        MenuItem help = menu.add(R.string.help);
+        help.setIcon(R.drawable.help);
+        help.setIntent(new Intent(this, Help.class));
+        
         MenuItem about = menu.add(R.string.about);
         about.setIcon(R.drawable.about);
         about.setIntent(new Intent(Intent.ACTION_VIEW, getAboutPageUri()));
@@ -105,7 +138,9 @@ public class RingToggle extends Activity {
     protected void updateRadioGroup() {
         int checkedId = current();
         RadioButton checked = (RadioButton) findViewById(checkedId);
+        m_ignoreChange = true;
         checked.setChecked(true);
+        m_ignoreChange = false;
     }
 
 	protected int current() {
@@ -148,5 +183,16 @@ public class RingToggle extends Activity {
 		audio.setRingerMode(AudioManager.RINGER_MODE_SILENT);
 		audio.setVibrateSetting(AudioManager.VIBRATE_TYPE_RINGER, AudioManager.VIBRATE_SETTING_OFF);
 		audio.setVibrateSetting(AudioManager.VIBRATE_TYPE_NOTIFICATION, AudioManager.VIBRATE_SETTING_OFF);
+    }
+    
+    protected void close() {
+    	new Thread() {
+			public void run() {
+				try {
+					Thread.sleep(500);
+				} catch (InterruptedException e) {}
+				RingToggle.this.finish();
+			}
+    	}.start();
     }
 }

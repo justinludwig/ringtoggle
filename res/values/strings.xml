@@ -7,4 +7,40 @@
     <string name="silent">Silent</string>
 	<string name="finish">Close</string>
 	<string name="about">About</string>
+	<string name="help">Help</string>
+	<string name="help_text"><big><b>Using Ring Toggle</b></big>\n
+\n
+Ring Toggle allows you to switch quickly among different ring modes, without fiddling around with any other android settings. Simply open the app and select a mode; the selected mode takes effect immediately:\n
+\n
+  * <b>Ring &amp; Vibrate</b>: Calls and notifications do sound a ring tone and trigger vibration.\n
+  * <b>Ring Only</b>: Calls and notifications do sound a ring tone, but do not trigger vibration.\n
+  * <b>Vibrate Only</b>: Calls and notifications do not sound a ring tone, but do trigger vibration.\n
+  * <b>Silent</b>: Calls and notifications do not sound a ring tone and do not trigger vibration.\n
+\n
+<big><b>Other Applications\' Settings</b></big>\n
+\n
+You may configure other apps (such as Gmail or Messaging) with custom notification ring-tones or vibration settings. If you configure another app to sound an audible ring, it will ring only if Ring Toggle is set to Ring &amp; Vibrate or Ring Only; if you set the other app to vibrate, it will vibrate only if Ring Toggle is set to Ring &amp; Vibrate or Vibrate Only.\n
+\n
+<b>Text Messages</b>\n
+\n
+To trigger vibration when you receive a text message, turn on the Messaging app\'s Vibration option:\n
+\n
+  1. Open the Messaging app.\n
+  2. Press the Menu key.\n
+  3. Tap the Settings item.\n
+  4. Scroll down to the very bottom, and tap the Vibrate checkbox.\n
+\n
+This will trigger vibration when you set Ring Toggle to Ring &amp; Vibrate or Ring Only. It will not trigger vibration when you set Ring Toggle to Ring Only or Silent.\n
+\n
+Also, you can set the Messaging app to ring when you receive a text message (this is in fact the Messaging app\'s default configuration; you can change it via the Messaging app\'s Select ringtone setting). When you do so, and Ring Toggle is set to Ring &amp; Vibrate or Ring Only, an audible ring will sound when you receive a text message; when Ring Toggle is set to Vibrate Only or Silent, no audible ring will sound.\n
+\n
+<b>Alarm Clock</b>\n
+\n
+When you set Ring Toggle to Vibrate Only or Silent, the Alarm Clock app will still sound audible alarms.\n
+\n
+<big><b>Default Android Behavior</b></big>\n
+\n
+You can use your android handset\'s Volume Up and Volume Down keys to adjust the ringer volume from any app, as long as media (like music or videos) are not playing, and a call is not in progress. If you adjust the ringer volume to zero with these keys, android automatically will switch to Vibrate Only ring-mode. If you adjust the ringer volume down still further, android automatically will switch to Silent ring-mode (suppressing both any audible ring-tone and vibration). This is the built-in behavior of android, and you do not have to have Ring Toggle installed to use this feature.
+	</string>
+
 </resources>
