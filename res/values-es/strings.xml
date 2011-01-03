@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Timbre de Alternar</string>
+    <string name="ring_and_vibrate">Timbre y Vibración</string>
+    <string name="ring">Sólo Suene</string>
+    <string name="vibrate">Sólo Vibración</string>
+    <string name="silent">Silencio</string>
+	
+	
+	
+	
+
+</resources>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Ring-Schalter</string>
+    <string name="ring_and_vibrate">Ring und Vibrieren</string>
+    <string name="ring">Ring Nur</string>
+    <string name="vibrate">Vibrieren Nur</string>
+    <string name="silent">Schweigen</string>
+	
+	
+	
+	
+
+</resources>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Bascule Ring</string>
+    <string name="ring_and_vibrate">Sonne et Vibre</string>
+    <string name="ring">Sonne Uniquement</string>
+    <string name="vibrate">Vibreur Seulement</string>
+    <string name="silent">Le Silence</string>
+	
+	
+	
+	
+
+</resources>
