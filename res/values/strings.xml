@@ -8,6 +8,8 @@
 	<string name="finish">Close</string>
 	<string name="about">About</string>
 	<string name="help">Help</string>
+	<string name="market_promo_text">Simple app for toggling the ringer mode</string>
+	<string name="market_description">Ring Toggle is a simple app which allows you to switch quickly among ring, vibrate, and silent modes, without fiddling around with any other android settings. Simply open the app and select a mode; the selected mode takes effect immediately.</string>
 	<string name="help_text"><big><b>Using Ring Toggle</b></big>\n
 \n
 Ring Toggle allows you to switch quickly among different ring modes, without fiddling around with any other android settings. Simply open the app and select a mode; the selected mode takes effect immediately:\n

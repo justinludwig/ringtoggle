@@ -5,9 +5,6 @@
     <string name="ring">Ring Nur</string>
     <string name="vibrate">Vibrieren Nur</string>
     <string name="silent">Schweigen</string>
-	
-	
-	
-	
-
+	<string name="market_promo_text">Einfache Anwendung zum Umschalten der Ringer-Modus</string>
+	<string name="market_description">Ring-Schalter ist eine einfache Anwendung zum Umschalten zwischen Ring, vibrieren, und Stummschaltungsmodi. Öffnen Sie einfach das App und wählen Sie einen Modus, der gewählte Modus wird sofort wirksam.</string>
 </resources>

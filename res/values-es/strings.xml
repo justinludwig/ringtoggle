@@ -5,9 +5,6 @@
     <string name="ring">Sólo Suene</string>
     <string name="vibrate">Sólo Vibración</string>
     <string name="silent">Silencio</string>
-	
-	
-	
-	
-
+	<string name="market_promo_text">Simple aplicación para cambiar el modo de timbre</string>
+	<string name="market_description">Timbre de Alternar es una aplicación sencilla para la conmutación entre el anillo, vibrar, y los modos en silencio. Basta con abrir la aplicación y seleccionar un modo, el modo seleccionado entra en vigor inmediatamente.</string>
 </resources>
