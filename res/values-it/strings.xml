@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="app_name">Gestore Profili</string>
+    <string name="ring_and_vibrate">Suoneria &amp; Vibrazione</string>
+    <string name="ring">Solo Suoneria</string>
+    <string name="vibrate">Solo Vibrazione</string>
+    <string name="silent">Silenzioso</string>
+    <string name="finish">Chiudi</string>
+    <string name="about">Informazioni</string>
+    <string name="help">Aiuto</string>
+    <string name="market_promo_text">Semplice applicazione per gestire le modalità di suono e di vibrazione</string>
+    <string name="market_description">Gestore Profili è una semplice applicazione che ti permette, in modo veloce e comodo, di impostare la modalità che preferisci tra quelle disponibili: suoneria attiva, vibrazione e silenzioso, senza doversi spostare tra ulteriori menu di impostazioni Android. Semplicemente, apri e seleziona il profilo desiderato; ciò che hai scelto sarà impostato immediatamente.\n\nUn ringraziamento speciale al nostro caro amico Michael Lepori per la traduzione in italiano.</string>
+<string name="help_text"><big><b>Uso di Gestore Profili</b></big>\n
+\n
+Gestore Profili ti permette, in modo veloce e comodo, di impostare la modalità che preferisci senza doversi spostare tra ulteriori menu di impostazioni Android. Semplicemente, apri e seleziona il profilo desiderato; ciò che sceglierai sarà impostato immediatamente:\n
+\n
+  * <b>Suoneria &amp; Vibrazione</b>: Le chiamate e le notifiche saranno segnalate da una suoneria ed una vibrazione.\n
+  * <b>Solo Suoneria</b>: Le chiamate e le notifiche saranno segnalate da una suoneria ma non ci sarà alcuna vibrazione.\n
+  * <b>Solo Vibrazione</b>: Le chiamate e le notifiche saranno segnalate soltanto da una vibrazione, e quindi la suoneria sarà disattivata.\n
+  * <b>Silenzioso</b>: Le chiamate e le notifiche non saranno segnalate né con suoni né con vibrazione.\n
+\n
+<big><b>Impostazioni di altre Applicazioni</b></big>\n
+\n
+Puoi configurare altre applicazioni (come Gmail o programmi di messaggistica) con suonerie personalizzate o modificando le impostazioni della vibrazione. Se configuri un\'altra applicazione con una suoneria udibile, essa si sentirà soltanto se il Gestore Profili sarà impostato su Suoneria &amp; Vibrazione o su Solo Suoneria; se configuri un\'altra applicazione, impostandogli di vibrare, le notifiche relative a tale applicazione vibreranno soltanto se il Gestore Profili sarà impostato su Suoneria &amp; Vibrazione o Solo Vibrazione.\n
+\n
+<b>Messaggi di Testo</b>\n
+\n
+Per avere la vibrazione durante la ricezione di un messaggio di testo, attiva l\'opzione di vibrazione dell\'applicazione di messaggistica:\n
+\n
+  1. Apri l\'applicazione di messaggistica.\n
+  2. Premi il pulsante Menu.\n
+  3. Clicca sulla voce Impostazioni.\n
+  4. Scorri giù fino ad arrivare in fondo e clicca sull\'opzione Vibrazione.\n
+\n
+In questo caso la vibrazione funzionerà quanto imposterai il Gestore Profili su Suoneria &amp; Vibrazione o Solo Vibrazione. Non vibrerà quando imposterai il Gestore Profili su Solo Suoneria o Silenzioso.\n
+\n
+Puoi anche impostare l\'applicazione di messaggistica in modo che suoni quando ricevi un messaggio di testo (di fatto, questa è la configurazione di default dell\'applicazione; puoi modificarla dalle impostazioni di selezione suoneria dell\'applicazione di messaggistica). Quando farai ciò e il Gestore Profili sarà impostato su Suoneria &amp; Vibrazione o Solo Suoneria, sentirai un suono udibile alla ricezione di un messaggio; se il Gestore Profili sarà, invece, impostato su Solo Vibrazione o Silenzioso, non si sentirà suonare alcun suono.\n
+\n
+<b>Sveglia</b>\n
+\n
+Quando imposti il Gestore Profili su Solo Vibrazione o Silenzioso, l\'applicazione della Sveglia suonerà lo stesso.\n
+\n
+<big><b>Comportamento di Default di Android</b></big>\n
+\n
+Puoi usare sul tuo dispositivo Android i pulsanti Volume Su e Volume Giù per impostare, da qualsiasi applicazione, il volume della suoneria, tranne che quando stanno suonando dei media (come musica e video) oppure siamo impegnati in una chiamata. Se imposti il volume della suoneria su zero con questi pulsanti, Android si imposterà automaticamente sulla modalità Silenzioso (così non funzioneranno entrambi, non udirai alcun suono né percepirai alcuna vibrazione). Se invece premi ulteriormente il Volume Giù, la modalità passerà da Silenzioso a Solo Vibrazione. Questa è una funzione già implementata in Android e non è necessario avere il Gestore Profili per usare questa caratteristica.
+</string>
+
+</resources>
