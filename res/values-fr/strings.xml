@@ -6,5 +6,5 @@
     <string name="vibrate">Vibreur Seulement</string>
     <string name="silent">Le Silence</string>
 	<string name="market_promo_text">Application simple pour basculer le mode de sonnerie</string>
-	<string name="market_description">Bascule Ring est une application simple pour la commutation entre les anneaux, vibrer, et les modes silencieux. Il suffit d'ouvrir l'application et sélectionnez un mode, le mode sélectionné prend effet immédiatement.</string>
+	<string name="market_description">Bascule Ring est une application simple pour la commutation entre les anneaux, vibrer, et les modes silencieux. Il suffit d\'ouvrir l\'application et sélectionnez un mode, le mode sélectionné prend effet immédiatement.</string>
 </resources>
