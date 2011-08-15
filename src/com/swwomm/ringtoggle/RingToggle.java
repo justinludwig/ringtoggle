@@ -158,6 +158,8 @@ public class RingToggle extends Activity {
     }
     
     protected void ringAndVibrate() {
+    	broadcastVolumeUpdate(AudioManager.RINGER_MODE_NORMAL);
+    	
 		AudioManager audio = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
 		audio.setRingerMode(AudioManager.RINGER_MODE_NORMAL);
 		audio.setVibrateSetting(AudioManager.VIBRATE_TYPE_RINGER, AudioManager.VIBRATE_SETTING_ON);
@@ -165,6 +167,8 @@ public class RingToggle extends Activity {
     }
     
     protected void ring() {
+    	broadcastVolumeUpdate(AudioManager.RINGER_MODE_NORMAL);
+    	
 		AudioManager audio = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
 		audio.setRingerMode(AudioManager.RINGER_MODE_NORMAL);
 		audio.setVibrateSetting(AudioManager.VIBRATE_TYPE_RINGER, AudioManager.VIBRATE_SETTING_OFF);
@@ -172,6 +176,8 @@ public class RingToggle extends Activity {
     }
     
     protected void vibrate() {
+    	broadcastVolumeUpdate(AudioManager.RINGER_MODE_VIBRATE);
+    	
 		AudioManager audio = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
 		audio.setRingerMode(AudioManager.RINGER_MODE_VIBRATE);
 		audio.setVibrateSetting(AudioManager.VIBRATE_TYPE_RINGER, AudioManager.VIBRATE_SETTING_ON);
@@ -179,6 +185,8 @@ public class RingToggle extends Activity {
     }
     
     protected void silent() {
+    	broadcastVolumeUpdate(AudioManager.RINGER_MODE_SILENT);
+    	
 		AudioManager audio = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
 		audio.setRingerMode(AudioManager.RINGER_MODE_SILENT);
 		audio.setVibrateSetting(AudioManager.VIBRATE_TYPE_RINGER, AudioManager.VIBRATE_SETTING_OFF);
@@ -194,5 +202,14 @@ public class RingToggle extends Activity {
 				RingToggle.this.finish();
 			}
     	}.start();
+    }
+    
+    protected void broadcastVolumeUpdate(int ringerMode) {
+        // see http://www.openintents.org/en/node/380
+        Intent intent = new Intent("org.openintents.audio.action_volume_update");
+        intent.putExtra("org.openintents.audio.extra_stream_type", AudioManager.STREAM_RING);
+        intent.putExtra("org.openintents.audio.extra_volume_index", -9999);
+        intent.putExtra("org.openintents.audio.extra_ringer_mode", ringerMode);
+        getApplicationContext().sendOrderedBroadcast(intent, null);
     }
 }
